@@ -55,3 +55,5 @@ See README.md for details.
 
 ## GitHub
 Please push this repository to your GitHub account and include the link in the submission. Optionally, provide branch or access details if the repo is private.
+
+Ready for review by the hiring team.
