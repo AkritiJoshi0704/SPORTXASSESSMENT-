@@ -68,5 +68,45 @@
     "ctr": 24.5,
     "budget_total": 657678,
     "budget_spent": 876
+  },
+  {
+    "id": "9",
+    "name": "Test Campaign",
+    "advertiser": "Test Brand",
+    "status": "active",
+    "impressions": 50000,
+    "ctr": 2.5,
+    "budget_total": 25000,
+    "budget_spent": 10000
+  },
+  {
+    "id": "10",
+    "name": "Another Test",
+    "advertiser": "Brand 2",
+    "status": "paused",
+    "impressions": 30000,
+    "ctr": 1.5,
+    "budget_total": 20000,
+    "budget_spent": 8000
+  },
+  {
+    "id": "11",
+    "name": "Test Campaign",
+    "advertiser": "Test Brand",
+    "status": "active",
+    "impressions": 50000,
+    "ctr": 2.5,
+    "budget_total": 25000,
+    "budget_spent": 10000
+  },
+  {
+    "id": "12",
+    "name": "Another Test",
+    "advertiser": "Brand 2",
+    "status": "paused",
+    "impressions": 30000,
+    "ctr": 1.5,
+    "budget_total": 20000,
+    "budget_spent": 8000
   }
 ]
