@@ -90,6 +90,49 @@ function App() {
     }
   };
 
+  // Update full campaign
+  const updateCampaign = async (id, campaignData) => {
+    try {
+      const response = await fetch(`${API_URL}/campaigns/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'X-API-Key': API_KEY,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(campaignData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to update campaign');
+      }
+
+      await fetchCampaigns();
+    } catch (err) {
+      alert('Failed to update campaign: ' + err.message);
+    }
+  };
+
+  // Delete campaign
+  const deleteCampaign = async (id) => {
+    if (!confirm('Delete this campaign?')) return;
+    try {
+      const response = await fetch(`${API_URL}/campaigns/${id}`, {
+        method: 'DELETE',
+        headers: { 'X-API-Key': API_KEY },
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to delete campaign');
+      }
+
+      await fetchCampaigns();
+    } catch (err) {
+      alert('Failed to delete campaign: ' + err.message);
+    }
+  };
+
   // Create new campaign
   const createCampaign = async (campaignData) => {
     try {
@@ -473,6 +516,8 @@ function App() {
                 key={campaign.id}
                 campaign={campaign}
                 onUpdateStatus={updateCampaignStatus}
+                onUpdate={updateCampaign}
+                onDelete={deleteCampaign}
               />
             ))}
           </div>

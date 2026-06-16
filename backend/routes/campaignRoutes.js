@@ -6,6 +6,7 @@ const {
     getCampaignById,
     createCampaign,
     updateCampaignStatus,
+    updateCampaign,
     deleteCampaign
 } = require('../controllers/campaignController');
 const { protect, restrictTo } = require('../middleware/auth');
@@ -27,6 +28,9 @@ router.post('/', asyncHandler(createCampaign));
 
 // PATCH /campaigns/:id/status - Update campaign status
 router.patch('/:id/status', asyncHandler(updateCampaignStatus));
+
+// PATCH /campaigns/:id - Update entire campaign
+router.patch('/:id', asyncHandler(updateCampaign));
 
 // DELETE /campaigns/:id - Delete campaign
 router.delete('/:id', asyncHandler(deleteCampaign));

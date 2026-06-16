@@ -120,6 +120,51 @@ class CampaignController {
     }
   }
 
+  // Update full campaign data
+  async updateCampaign(req, res) {
+    try {
+      const validationErrors = validateCampaign(req.body);
+
+      if (validationErrors.length > 0) {
+        return res.status(400).json({
+          success: false,
+          error: 'Validation failed',
+          message: validationErrors,
+        });
+      }
+
+      const updated = CampaignModel.update(req.params.id, {
+        name: req.body.name.trim(),
+        advertiser: req.body.advertiser.trim(),
+        status: req.body.status,
+        impressions: req.body.impressions,
+        ctr: req.body.ctr,
+        budget_total: req.body.budget_total,
+        budget_spent: req.body.budget_spent,
+      });
+
+      if (!updated) {
+        return res.status(404).json({
+          success: false,
+          error: 'Campaign not found',
+          message: `No campaign found with id: ${req.params.id}`,
+        });
+      }
+
+      res.json({
+        success: true,
+        message: 'Campaign updated successfully',
+        data: updated,
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        error: 'Internal server error',
+        message: error.message,
+      });
+    }
+  }
+
   // Delete campaign
   async deleteCampaign(req, res) {
     try {

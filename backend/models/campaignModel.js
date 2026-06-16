@@ -64,6 +64,28 @@ const CampaignModel = {
     return campaigns[campaignIndex];
   },
 
+  update: (id, data) => {
+    const campaignIndex = campaigns.findIndex((c) => c.id === id);
+    if (campaignIndex === -1) return null;
+    // Merge allowed fields
+    const allowed = [
+      'name',
+      'advertiser',
+      'status',
+      'impressions',
+      'ctr',
+      'budget_total',
+      'budget_spent',
+    ];
+    allowed.forEach((key) => {
+      if (Object.prototype.hasOwnProperty.call(data, key)) {
+        campaigns[campaignIndex][key] = data[key];
+      }
+    });
+    saveData();
+    return campaigns[campaignIndex];
+  },
+
   delete: (id) => {
     const campaignIndex = campaigns.findIndex((c) => c.id === id);
     if (campaignIndex === -1) {

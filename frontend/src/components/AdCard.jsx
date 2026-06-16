@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-const AdCard = ({ campaign, onUpdateStatus }) => {
+const AdCard = ({ campaign, onUpdateStatus, onUpdate, onDelete }) => {
   const {
     id,
     name,
@@ -11,6 +11,32 @@ const AdCard = ({ campaign, onUpdateStatus }) => {
     budget_total,
     budget_spent,
   } = campaign;
+
+  const [editing, setEditing] = useState(false);
+  const [form, setForm] = useState({
+    name,
+    advertiser,
+    status,
+    impressions,
+    ctr,
+    budget_total,
+    budget_spent,
+  });
+
+  const submitUpdate = () => {
+    if (onUpdate) {
+      onUpdate(id, {
+        name: String(form.name || '').trim(),
+        advertiser: String(form.advertiser || '').trim(),
+        status: form.status,
+        impressions: Number(form.impressions) || 0,
+        ctr: Number(form.ctr) || 0,
+        budget_total: Number(form.budget_total) || 0,
+        budget_spent: Number(form.budget_spent) || 0,
+      });
+      setEditing(false);
+    }
+  };
 
   // Calculate budget percentage (guard against division by zero)
   const budgetPercentage =
@@ -119,7 +145,43 @@ const AdCard = ({ campaign, onUpdateStatus }) => {
             </button>
           )}
         </div>
+        <div className="flex gap-2 mt-3">
+          <button
+            onClick={() => setEditing(!editing)}
+            className="px-3 py-1 text-xs font-medium rounded bg-blue-100 text-blue-700 hover:bg-blue-200 transition-colors"
+          >
+            {editing ? 'Cancel' : 'Edit'}
+          </button>
+          <button
+            onClick={() => onDelete && onDelete(id)}
+            className="px-3 py-1 text-xs font-medium rounded bg-red-100 text-red-700 hover:bg-red-200 transition-colors"
+          >
+            Delete
+          </button>
+        </div>
       </div>
+
+      {editing && (
+        <div className="mt-4 p-4 bg-gray-50 border border-gray-100 rounded">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <input value={form.name} onChange={(e) => setForm({...form, name: e.target.value})} className="p-2 border" />
+            <input value={form.advertiser} onChange={(e) => setForm({...form, advertiser: e.target.value})} className="p-2 border" />
+            <select value={form.status} onChange={(e) => setForm({...form, status: e.target.value})} className="p-2 border">
+              <option value="active">Active</option>
+              <option value="paused">Paused</option>
+              <option value="ended">Ended</option>
+            </select>
+            <input type="number" value={form.impressions} onChange={(e) => setForm({...form, impressions: e.target.value})} className="p-2 border" />
+            <input type="number" step="0.1" value={form.ctr} onChange={(e) => setForm({...form, ctr: e.target.value})} className="p-2 border" />
+            <input type="number" value={form.budget_total} onChange={(e) => setForm({...form, budget_total: e.target.value})} className="p-2 border" />
+            <input type="number" value={form.budget_spent} onChange={(e) => setForm({...form, budget_spent: e.target.value})} className="p-2 border" />
+          </div>
+          <div className="mt-3 flex gap-2">
+            <button onClick={submitUpdate} className="px-3 py-1 bg-green-600 text-white rounded">Save</button>
+            <button onClick={() => setEditing(false)} className="px-3 py-1 bg-gray-200 rounded">Cancel</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
