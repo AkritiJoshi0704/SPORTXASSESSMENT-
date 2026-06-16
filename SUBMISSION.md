@@ -57,3 +57,5 @@ See README.md for details.
 Please push this repository to your GitHub account and include the link in the submission. Optionally, provide branch or access details if the repo is private.
 
 Ready for review by the hiring team.
+
+Ports: This project must run with the backend on port `3001` and the frontend served on port `3000`. Use the helper `npm run start-all` from the repo root to start both services. If those ports are in use, free them first (see README for commands).

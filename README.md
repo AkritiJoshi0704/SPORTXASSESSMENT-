@@ -12,13 +12,25 @@ This project is a full-stack implementation of the itsSpotlight/Spotx developer 
 
 Run locally (single command from repo root):
 ```bash
-# install and run both services
+# install and run both services (ports are required: frontend=3000, backend=3001)
 npm run start-all
 
-# or run separately
+# or run separately (ensure backend on 3001 and frontend on 3000)
 cd backend && npm install && npm start  # backend on port 3001
 cd frontend && npm install && npm run dev  # frontend on port 3000
 ```
+
+Ports and troubleshooting
+- This project expects the backend on `http://localhost:3001` and the frontend served on `http://localhost:3000`.
+- If `npm run start-all` fails with `EADDRINUSE`, free the ports before retrying.
+
+Free ports (examples):
+- Windows (PowerShell):
+  - Check process: `Get-NetTCPConnection -LocalPort 3001 | Select-Object -ExpandProperty OwningProcess`
+  - Kill process: `Stop-Process -Id <PID>`
+- macOS / Linux:
+  - Check process: `sudo lsof -i :3001`
+  - Kill process: `sudo kill -9 <PID>`
 
 **Sections Completed:**
 - ✅ **Section A (Frontend)**: Tasks A1 (Ad Card Component) and A2 (Campaign Filter UI)

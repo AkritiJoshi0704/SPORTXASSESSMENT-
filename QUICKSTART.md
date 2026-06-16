@@ -18,6 +18,12 @@ npm run dev
 ```
 Frontend will run at `http://localhost:3000`
 
+Important: this project requires these exact ports. If either port is already in use, free the port before running `npm run start-all`.
+
+Examples to free ports:
+- Windows (PowerShell): `Get-NetTCPConnection -LocalPort 3001 | Select-Object -ExpandProperty OwningProcess | Stop-Process -Force`
+- macOS / Linux: `sudo lsof -i :3001` then `sudo kill -9 <PID>`
+
 ---
 
 ## Environment Setup (Optional)
