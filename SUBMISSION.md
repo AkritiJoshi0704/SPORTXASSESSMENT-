@@ -1,5 +1,7 @@
 # Submission Notes
 
+This submission implements the Spotx assessment with pragmatic choices to keep the project self-contained and easy to review: a React + Vite frontend with Tailwind for UI, and a small Express backend that persists data to `backend/data/campaigns.json` (no external DB). I prioritized the core create/update/delete flows, added unit and integration tests, and exported the Express `app` so automated tests run reliably. To run locally, build the frontend and start both services with the provided `start-all` helper (see commands below).
+
 This file summarizes what to include when submitting the assessment and provides a single-command helper to start both services for local verification.
 
 ## Completed Sections

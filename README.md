@@ -6,6 +6,20 @@
 
 This project is a full-stack implementation of the itsSpotlight/Spotx developer assignment. It includes both frontend (Section A) and backend (Section B) components, demonstrating a complete DOOH (Digital Out-of-Home) campaign management system.
 
+## TL;DR
+
+- Quick summary: Full-stack Spotx assessment — React + Vite frontend, Node/Express backend with simple file persistence, authentication via API key, and Jest tests (unit + integration).
+
+Run locally (single command from repo root):
+```bash
+# install and run both services
+npm run start-all
+
+# or run separately
+cd backend && npm install && npm start  # backend on port 3001
+cd frontend && npm install && npm run dev  # frontend on port 3000
+```
+
 **Sections Completed:**
 - ✅ **Section A (Frontend)**: Tasks A1 (Ad Card Component) and A2 (Campaign Filter UI)
 - ✅ **Section B (Backend)**: Tasks B1 (Campaign API) and B2 (Basic Auth Middleware)
