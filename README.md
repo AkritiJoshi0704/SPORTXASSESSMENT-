@@ -1,5 +1,7 @@
 # Spotx - Developer Internship Assessment
 
+[![CI](https://github.com/AkritiJoshi0704/SPORTXASSESSMENT-/actions/workflows/ci.yml/badge.svg)](https://github.com/AkritiJoshi0704/SPORTXASSESSMENT-/actions/workflows/ci.yml)
+
 ## Overview
 
 This project is a full-stack implementation of the itsSpotlight/Spotx developer assignment. It includes both frontend (Section A) and backend (Section B) components, demonstrating a complete DOOH (Digital Out-of-Home) campaign management system.
