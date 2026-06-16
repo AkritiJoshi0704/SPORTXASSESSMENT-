@@ -17,7 +17,7 @@
     "impressions": 89000,
     "ctr": 3.2,
     "budget_total": 75000,
-    "budget_spent": 45000
+    "budget_spent": 45001
   },
   {
     "id": "3",
@@ -33,7 +33,7 @@
     "id": "4",
     "name": "Holiday Special",
     "advertiser": "Amazon",
-    "status": "ended",
+    "status": "paused",
     "impressions": 234000,
     "ctr": 4.1,
     "budget_total": 100000,
@@ -50,13 +50,23 @@
     "budget_spent": 38000
   },
   {
-    "id": "6",
-    "name": "Flash Sale",
-    "advertiser": "Best Buy",
-    "status": "paused",
-    "impressions": 45000,
-    "ctr": 2.1,
-    "budget_total": 30000,
-    "budget_spent": 15000
+    "id": "7",
+    "name": "E2E Test Campaign",
+    "advertiser": "TestCo",
+    "status": "active",
+    "impressions": 1000,
+    "ctr": 1.5,
+    "budget_total": 5000,
+    "budget_spent": 100
+  },
+  {
+    "id": "8",
+    "name": "SSDFG",
+    "advertiser": "76",
+    "status": "active",
+    "impressions": 456,
+    "ctr": 24.5,
+    "budget_total": 657678,
+    "budget_spent": 876
   }
 ]

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "test": "jest --coverage",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "keywords": ["api", "campaigns", "express"],
