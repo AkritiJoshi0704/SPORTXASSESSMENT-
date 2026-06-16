@@ -2,7 +2,5 @@
   "name": "sportx-assessment",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "start-all": "echo \"Deprecated: run backend and frontend separately. See README.md\" && exit 0"
-  }
+  "scripts": {}
 }
