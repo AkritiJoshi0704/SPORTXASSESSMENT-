@@ -10,27 +10,25 @@ This project is a full-stack implementation of the itsSpotlight/Spotx developer 
 
 - Quick summary: Full-stack Spotx assessment — React + Vite frontend, Node/Express backend with simple file persistence, authentication via API key, and Jest tests (unit + integration).
 
-Run locally (single command from repo root):
+Run locally (recommended: start backend and frontend separately so tests and manual runs don't conflict):
 ```bash
-# install and run both services (ports are required: frontend=3000, backend=3001)
-npm run start-all
+# Backend (port 3001)
+cd backend
+npm install
+npm start
 
-# or run separately (ensure backend on 3001 and frontend on 3000)
-cd backend && npm install && npm start  # backend on port 3001
-cd frontend && npm install && npm run dev  # frontend on port 3000
+# Frontend dev server (port 3000)
+cd frontend
+npm install
+npm run dev
+
+# To serve the production build locally (port 3000)
+cd frontend
+npm run build
+npx http-server dist -p 3000 -c-1
 ```
 
-Ports and troubleshooting
-- This project expects the backend on `http://localhost:3001` and the frontend served on `http://localhost:3000`.
-- If `npm run start-all` fails with `EADDRINUSE`, free the ports before retrying.
-
-Free ports (examples):
-- Windows (PowerShell):
-  - Check process: `Get-NetTCPConnection -LocalPort 3001 | Select-Object -ExpandProperty OwningProcess`
-  - Kill process: `Stop-Process -Id <PID>`
-- macOS / Linux:
-  - Check process: `sudo lsof -i :3001`
-  - Kill process: `sudo kill -9 <PID>`
+Note: Services are expected to run on ports `3001` (backend) and `3000` (frontend). You do not need `scripts/start-all.js`; running the commands above is sufficient and less prone to port conflicts.
 
 **Sections Completed:**
 - ✅ **Section A (Frontend)**: Tasks A1 (Ad Card Component) and A2 (Campaign Filter UI)

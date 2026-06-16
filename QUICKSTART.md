@@ -1,28 +1,24 @@
 # Quick Start Guide
 
-## One-Command Setup (Requires Two Terminals)
+## Start Backend and Frontend (ports 3001 & 3000)
 
-### Terminal 1: Backend
+### Terminal 1: Backend (port 3001)
 ```bash
 cd backend
 npm install
 npm start
 ```
+
 Backend will run at `http://localhost:3001`
 
-### Terminal 2: Frontend
+### Terminal 2: Frontend dev server (port 3000)
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
+
 Frontend will run at `http://localhost:3000`
-
-Important: this project requires these exact ports. If either port is already in use, free the port before running `npm run start-all`.
-
-Examples to free ports:
-- Windows (PowerShell): `Get-NetTCPConnection -LocalPort 3001 | Select-Object -ExpandProperty OwningProcess | Stop-Process -Force`
-- macOS / Linux: `sudo lsof -i :3001` then `sudo kill -9 <PID>`
 
 ---
 

@@ -1,6 +1,6 @@
 # Submission Notes
 
-This submission implements the Spotx assessment with pragmatic choices to keep the project self-contained and easy to review: a React + Vite frontend with Tailwind for UI, and a small Express backend that persists data to `backend/data/campaigns.json` (no external DB). I prioritized the core create/update/delete flows, added unit and integration tests, and exported the Express `app` so automated tests run reliably. To run locally, build the frontend and start both services with the provided `start-all` helper (see commands below).
+This submission implements the Spotx assessment with pragmatic choices to keep the project self-contained and easy to review: a React + Vite frontend with Tailwind for UI, and a small Express backend that persists data to `backend/data/campaigns.json` (no external DB). I prioritized the core create/update/delete flows, added unit and integration tests, and exported the Express `app` so automated tests run reliably. To run locally, start the backend and frontend separately on ports `3001` (backend) and `3000` (frontend) as documented below — `scripts/start-all.js` is optional and not required.
 
 This file summarizes what to include when submitting the assessment and provides a single-command helper to start both services for local verification.
 
@@ -57,5 +57,3 @@ See README.md for details.
 Please push this repository to your GitHub account and include the link in the submission. Optionally, provide branch or access details if the repo is private.
 
 Ready for review by the hiring team.
-
-Ports: This project must run with the backend on port `3001` and the frontend served on port `3000`. Use the helper `npm run start-all` from the repo root to start both services. If those ports are in use, free them first (see README for commands).
