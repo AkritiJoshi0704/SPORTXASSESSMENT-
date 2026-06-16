@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start-all": "node scripts/start-all.js"
+    "start-all": "echo \"Deprecated: run backend and frontend separately. See README.md\" && exit 0"
   }
 }
