@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "name": "Summer Sale Campaign",
+    "advertiser": "Nike",
+    "status": "active",
+    "impressions": 125000,
+    "ctr": 2.5,
+    "budget_total": 50000,
+    "budget_spent": 32500
+  },
+  {
+    "id": "2",
+    "name": "Product Launch - Q3",
+    "advertiser": "Apple",
+    "status": "active",
+    "impressions": 89000,
+    "ctr": 3.2,
+    "budget_total": 75000,
+    "budget_spent": 45000
+  },
+  {
+    "id": "3",
+    "name": "Brand Awareness",
+    "advertiser": "Coca-Cola",
+    "status": "paused",
+    "impressions": 67000,
+    "ctr": 1.8,
+    "budget_total": 40000,
+    "budget_spent": 28000
+  },
+  {
+    "id": "4",
+    "name": "Holiday Special",
+    "advertiser": "Amazon",
+    "status": "ended",
+    "impressions": 234000,
+    "ctr": 4.1,
+    "budget_total": 100000,
+    "budget_spent": 100000
+  },
+  {
+    "id": "5",
+    "name": "Back to School",
+    "advertiser": "Target",
+    "status": "active",
+    "impressions": 156000,
+    "ctr": 2.9,
+    "budget_total": 60000,
+    "budget_spent": 38000
+  },
+  {
+    "id": "6",
+    "name": "Flash Sale",
+    "advertiser": "Best Buy",
+    "status": "paused",
+    "impressions": 45000,
+    "ctr": 2.1,
+    "budget_total": 30000,
+    "budget_spent": 15000
+  }
+]
